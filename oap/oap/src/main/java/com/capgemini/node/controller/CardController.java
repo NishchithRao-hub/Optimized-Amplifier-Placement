@@ -16,12 +16,9 @@ public class CardController {
 
     private CardService cardService;
 
-    private CardRepository cardRepository;
-
     @Autowired
-    public CardController(CardService cardService, CardRepository cardRepository) {
+    public CardController(CardService cardService) {
         this.cardService = cardService;
-        this.cardRepository = cardRepository;
     }
 
     @GetMapping(path="/get-cards")

@@ -24,7 +24,7 @@ public class Edge {
     private Boolean isAvailable;
 
     @JsonIgnore
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "fk_node_id")
+    @ManyToOne(fetch = FetchType.LAZY ,cascade = CascadeType.ALL)
+    @JoinColumn(referencedColumnName = "node_id")
     private Node node;
 }

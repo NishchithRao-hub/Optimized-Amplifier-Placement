@@ -1,6 +1,5 @@
 package com.capgemini.node.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -8,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static javax.persistence.GenerationType.SEQUENCE;
@@ -28,8 +28,8 @@ public class Node {
     private String type;
     private Integer xPosition;
     private Integer yPosition;
-    @OneToMany(mappedBy = "node", cascade = CascadeType.ALL)
-    private List<Edge> edges;
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Edge> edges = new ArrayList<>();
 
     public Node(String name, String ip, String password, String type, List<Edge> edges) {
         this.name = name;
@@ -38,4 +38,9 @@ public class Node {
         this.type = type;
         this.edges = edges;
     }
+
+//    public void addEdge(Edge edge){
+//        this.edges.add(edge);
+//        edge.setNode(this);
+//    }
 }

@@ -29,14 +29,14 @@ public class CircuitController {
         return ResponseEntity.ok().body(circuitService.getCircuitById(id));
     }
 
-    @GetMapping("/get-circuit-by-source/{source}")
+    @GetMapping("/get-circuit-by-source/{src}")
     public ResponseEntity<Circuit> getCircuitBySource(@PathVariable String src){
         return ResponseEntity.ok().body(circuitService.getCircuitBySource(src));
     }
 
     @GetMapping("/get-circuit-by-destination/{dest}")
     public ResponseEntity<Circuit> getCircuitByDestination(@PathVariable String dest) {
-            return ResponseEntity.ok().body(circuitService.getCircuitBySource(dest));
+            return ResponseEntity.ok().body(circuitService.getCircuitByDestination(dest));
     }
 
     @PostMapping("/add-circuit")
