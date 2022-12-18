@@ -26,13 +26,17 @@ public class CircuitServiceTest {
     @Mock
     private CircuitRepository circuitRepository;
 
-    private final Circuit c1 = new Circuit(1,"A","B");
-    private final Circuit c2 = new Circuit(2,"B","c");
+    private Circuit c1 = new Circuit();
+    private Circuit c2 = new Circuit();
 
     private final List<Circuit> list= new ArrayList<>();
     {
         c1.setCircuit_id(1);
+        c1.setSource("A");
+        c1.setDestination("B");
         c2.setCircuit_id(2);
+        c2.setSource("B");
+        c2.setDestination("C");
         list.addAll(List.of(c1, c2));
     }
 

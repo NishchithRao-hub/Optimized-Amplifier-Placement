@@ -1,5 +1,6 @@
 package com.capgemini.node.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -29,7 +30,9 @@ public class Node {
     private Integer xPosition;
     private Integer yPosition;
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn()
     private List<Edge> edges = new ArrayList<>();
+
 
     public Node(String name, String ip, String password, String type, List<Edge> edges) {
         this.name = name;

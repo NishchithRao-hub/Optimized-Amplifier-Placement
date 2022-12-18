@@ -1,4 +1,4 @@
-package com.capgemini.login.modal;
+package com.capgemini.login.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -17,8 +17,8 @@ import static javax.persistence.GenerationType.SEQUENCE;
 @Table(name = "user_details")
 public class User {
     @Id
-    @SequenceGenerator(name = "node_sequence", sequenceName = "node_sequence")
-    @GeneratedValue(strategy = SEQUENCE, generator = "node_sequence")
+    @SequenceGenerator(name = "user_sequence", sequenceName = "user_sequence")
+    @GeneratedValue(strategy = SEQUENCE, generator = "user_sequence")
     private Integer id;
     private String userName;
     private String email;

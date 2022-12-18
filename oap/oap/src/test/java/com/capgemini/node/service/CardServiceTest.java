@@ -26,6 +26,7 @@ class CardServiceTest {
     @Mock
     private CardRepository cardRepository;
 
+
     private final Card c1 = new Card(1, "Booster", "OLA");
     private final Card c2 = new Card(2, "Pre-Booster", "AddDrop");
 
