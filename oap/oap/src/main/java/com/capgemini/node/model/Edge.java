@@ -27,4 +27,8 @@ public class Edge {
     @ManyToOne(fetch = FetchType.LAZY ,cascade = CascadeType.ALL)
     @JoinColumn(referencedColumnName = "node_id")
     private Node node;
+
+
+    //bst Card card
+    //prebooster card
 }

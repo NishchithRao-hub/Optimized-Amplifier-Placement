@@ -26,7 +26,7 @@ public class Circuit {
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn()
-    private List<Node> path =new ArrayList<>();
+    private List<Link> path =new ArrayList<>();
 
 
 }
